@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="loginForm" (submit)="login()" class="formBox">
+    <h1>LOGIN</h1>
+    <div>
+      <label for="">User</label>
+      <input formControlName="user" type="text" />
+    </div>
+    <div>
+      <label for="">Password</label>
+      <input formControlName="password" type="text" />
+    </div>
+    <button [disabled]="this.loginForm.invalid" type="submit">Enter</button>
+  </form>
+</div>
