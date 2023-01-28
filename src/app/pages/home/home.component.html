@@ -1,3 +1,13 @@
 <div class="container">
+  <div class="infoContainer">
+    <div *ngIf="!!data" class="title">
+      <h1>{{ data.sys.country }}</h1>
+      <h2>{{ data.name }}</h2>
+    </div>
+    <div *ngIf="!!data" class="col">
+      <img [src]="iconURL" [alt]="data.name" />
+      <h3>{{ data.main.temp - 273.15 | number }} Celsius</h3>
+    </div>
+  </div>
   <div id="map"></div>
 </div>

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import * as L from 'leaflet';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,10 @@ import * as L from 'leaflet';
 })
 export class HomeComponent implements AfterViewInit {
   private map: any;
+  data: any;
+  iconURL: string = '';
 
-  constructor() {}
+  constructor(private homeService: HomeService) {}
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -42,5 +45,11 @@ export class HomeComponent implements AfterViewInit {
       .setLatLng(e.latlng)
       .setContent(`You clicked at ${e.latlng.toString()}`)
       .openOn(this.map);
+
+    this.homeService.getWheather(e.latlng).subscribe((rep) => {
+      this.data = rep;
+      console.log(rep);
+      this.iconURL = `http://openweathermap.org/img/wn/${rep.weather[0].icon}@2x.png`;
+    });
   }
 }
