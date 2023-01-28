@@ -9,6 +9,12 @@ import * as L from 'leaflet';
 export class HomeComponent implements AfterViewInit {
   private map: any;
 
+  constructor() {}
+
+  ngAfterViewInit(): void {
+    this.initMap();
+  }
+
   private initMap(): void {
     this.map = L.map('map', {
       center: [39.8282, -98.5795],
@@ -20,17 +26,21 @@ export class HomeComponent implements AfterViewInit {
       {
         maxZoom: 18,
         minZoom: 3,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }
     );
 
+    const marker = L.marker([51.5, -0.09]).addTo(this.map);
     tiles.addTo(this.map);
+    this.map.on('click', (e: any) => this.onMapClick(e));
+
+    marker.bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
   }
 
-  constructor() {}
-
-  ngAfterViewInit(): void {
-    this.initMap();
+  onMapClick(e: any) {
+    const popup = new L.Popup();
+    popup
+      .setLatLng(e.latlng)
+      .setContent(`You clicked at ${e.latlng.toString()}`)
+      .openOn(this.map);
   }
 }
