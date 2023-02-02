@@ -11,6 +11,8 @@ export class HomeComponent implements AfterViewInit {
   private map: any;
   data: any;
   iconURL: string = '';
+  bgURL: string =
+    'https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png';
 
   constructor(private homeService: HomeService) {}
 
@@ -49,7 +51,14 @@ export class HomeComponent implements AfterViewInit {
     this.homeService.getWheather(e.latlng).subscribe((rep) => {
       this.data = rep;
       console.log(rep);
+      this.changeBG(rep.weather[0].icon);
       this.iconURL = `http://openweathermap.org/img/wn/${rep.weather[0].icon}@2x.png`;
     });
+  }
+
+  changeBG(code: string) {
+    console.log(code);
+    if (code === '01n' || code === '01d')
+      this.bgURL = 'https://wallpapercave.com/wp/wp6680277.jpg';
   }
 }
