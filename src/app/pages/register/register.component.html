@@ -1,0 +1,41 @@
+<div class="flex w-screen h-screen justify-center items-center">
+  <form
+    action=""
+    class="formShadow p-4 rounded-2xl relative flex flex-col justify-center gap-10 items-center w-4/12 h-[480px] shadow-xl"
+  >
+    <h1 class="font-bold text-3xl text-blue-400 font-[helvetica]">REGISTER</h1>
+    <div class="flex flex-col justify-center w-10/12 items-center">
+      <input
+        class="px-4 w-8/12 border-2 bg-gray-100 rounded-md h-10"
+        type="text"
+        placeholder="Name"
+      />
+    </div>
+    <div class="flex flex-col justify-center w-10/12 items-center">
+      <input
+        class="px-4 w-8/12 border-2 bg-gray-100 rounded-md h-10"
+        type="text"
+        placeholder="Email"
+      />
+    </div>
+    <div class="flex flex-col justify-center w-10/12 items-center">
+      <input
+        class="px-4 w-8/12 border-2 bg-gray-100 rounded-md h-10"
+        type="password"
+        placeholder="Password"
+      />
+    </div>
+    <button
+      class="p-2 rounded-xl bg-blue-500 text-2xl hover:bg-blue-600 cursor-pointer w-20 font-mono font-bold text-white"
+      type="submit"
+    >
+      Enter
+    </button>
+    <a
+      href=""
+      class="text-sm font-serif text-blue-700 absolute bottom-5"
+      [routerLink]="['/login']"
+      >Login</a
+    >
+  </form>
+</div>
