@@ -10,9 +10,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { RegisterComponent } from './pages/register/register.component';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent, AlertComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
