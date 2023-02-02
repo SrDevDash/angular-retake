@@ -23,10 +23,12 @@ export class AuthService {
   }
 
   login({ email, password }: any) {
+    console.log(email, password);
     const found = this.users.find(
-      (user) => user.email === email && password === user.password
+      (user) => user.email == email && password == user.password
     );
 
+    console.log(found);
     if (found)
       return {
         status: 200,
