@@ -1,21 +1,20 @@
-.center{
+.center {
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: spawn 10s forwards ease-in-out ;
-
+  animation: spawn 5s forwards ease-in-out;
 }
 
 @keyframes spawn {
-  0%{
-    transform: translate(-50%,-90px);
+  0% {
+    transform: translate(-50%, -90px);
   }
-  30%{
-    transform: translate(-50%,10px);
+  30% {
+    transform: translate(-50%, 10px);
   }
-  60%{
-     transform: translate(-50%,10px);
+  60% {
+    transform: translate(-50%, 10px);
   }
-  100%{
-    transform: translate(-50%,-90px);
+  100% {
+    transform: translate(-50%, -90px);
   }
 }

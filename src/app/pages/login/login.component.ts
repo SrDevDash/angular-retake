@@ -40,6 +40,10 @@ export class LoginComponent {
       this.error = '';
     } else {
       this.error = result.error || '';
+      setInterval(() => {
+        this.error = '';
+      }, 5000);
+      this.loginForm.controls['user'].setValue('');
     }
   }
 }
