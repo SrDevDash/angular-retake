@@ -11,6 +11,7 @@ export class AuthService {
   users: User[] = [
     { name: 'Pedro', email: 'pedrojose0272@gmail.com', password: '123456' },
   ];
+  private _auth: boolean = false;
 
   register(user: User) {
     this.users.push(user);
@@ -28,16 +29,23 @@ export class AuthService {
       (user) => user.email == email && password == user.password
     );
 
-    console.log(found);
-    if (found)
+    if (found) {
+      this._auth = true;
+
       return {
         status: 200,
         data: found,
         msg: 'Login successful',
       };
+    }
+
     return {
       status: 404,
       error: 'user not found',
     };
+  }
+
+  amILogin() {
+    return this._auth;
   }
 }

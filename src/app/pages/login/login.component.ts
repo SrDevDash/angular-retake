@@ -35,7 +35,7 @@ export class LoginComponent {
 
     if (result.status === 200) {
       console.log('pass');
-      this._router.navigate(['/home']);
+      this._router.navigate(['/']);
       localStorage.setItem('user', result.data?.name || '');
       this.error = '';
     } else {
