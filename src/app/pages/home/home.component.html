@@ -8,9 +8,9 @@
       class="flex w-screen flex-col justify-start items-center"
     >
       <h1 class="my-2 font-[helvetica] text-3xl font-bold">
-        {{ data.sys.country }}
+        {{ data.sys.country | uppercase }}
       </h1>
-      <h2 class="my-2 font-serif">{{ data.name }}</h2>
+      <h2 class="my-2 font-serif">{{ data.name | lowercase }}</h2>
     </div>
     <div
       *ngIf="!!data"
