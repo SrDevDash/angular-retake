@@ -4,11 +4,18 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './core/Guard/auth.guard';
+import { PokeComponent } from './pages/poke/poke.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  {
+    path: 'poke',
+    component: PokeComponent,
+    loadChildren: () =>
+      import('./pages/poke/poke.module').then((m) => m.PokeModule),
+  },
   { path: '**', redirectTo: '/login' },
   { path: '*', redirectTo: '/login' },
 ];

@@ -13,7 +13,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent, AlertComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    AlertComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
