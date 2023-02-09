@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './auth.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ export class AuthService {
   users: User[] = [
     { name: 'Pedro', email: 'pedrojose0272@gmail.com', password: '123456' },
   ];
+
   private _auth: boolean = false;
 
   register(user: User) {

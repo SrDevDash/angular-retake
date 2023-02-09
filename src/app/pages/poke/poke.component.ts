@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PokeService } from './poke.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-poke',
@@ -9,11 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class PokeComponent {
   id: any = '';
-  ob: Observable<any> = new Observable<''>();
+
+  ob: Observable<string> = new Observable<string>();
 
   constructor(private pokeService: PokeService) {}
 
   searchPokeByID(id: number) {
-    this.ob = this.pokeService.getPokeById(id);
+    this.ob = this.pokeService.getPokeById(id).pipe(map(({ name }) => name));
   }
 }
