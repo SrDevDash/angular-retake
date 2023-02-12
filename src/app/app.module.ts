@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { RegisterComponent } from './pages/register/register.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import { TestObservableComponent } from './pages/test-observable/test-observable.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
+    TestObservableComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './core/Guard/auth.guard';
 import { PokeComponent } from './pages/poke/poke.component';
+import { TestObservableComponent } from './pages/test-observable/test-observable.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,10 @@ const routes: Routes = [
     component: PokeComponent,
     loadChildren: () =>
       import('./pages/poke/poke.module').then((m) => m.PokeModule),
+  },
+  {
+    path: 'testObservable',
+    component: TestObservableComponent,
   },
   { path: '**', redirectTo: '/login' },
   { path: '*', redirectTo: '/login' },
